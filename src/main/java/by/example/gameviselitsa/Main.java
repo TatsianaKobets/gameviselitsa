@@ -3,6 +3,7 @@ package main.java.by.example.gameviselitsa;
 import java.util.Scanner;
 
 public class Main {
+
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     boolean playAgain;
