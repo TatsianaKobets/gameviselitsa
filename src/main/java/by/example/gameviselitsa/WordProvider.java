@@ -6,11 +6,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class WordProvider {
 
-  private List<String> words;
-
+  final List<String> words;
+  final Random random = new Random();
   public WordProvider() {
     this.words = loadWords();
   }
@@ -23,13 +25,12 @@ public class WordProvider {
         words.add(line);
       }
     } catch (IOException e) {
-      e.printStackTrace();
+      Logger.getLogger(WordProvider.class.getName()).log(Level.SEVERE, "Ошибка загрузки слов", e);
     }
     return words;
   }
 
   public String getRandomWord() {
-    Random random = new Random();
     return words.get(random.nextInt(words.size()));
   }
 }

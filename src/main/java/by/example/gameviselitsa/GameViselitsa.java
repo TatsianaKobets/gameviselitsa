@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class GameViselitsa {
 
   private static final int MAX_ATTEMPTS = 6;
-  private String word;
-  private Player player;
-  private WordProvider wordProvider;
-  private HangmanDrawing hangmanDrawing;
+  final String word;
+  final Player player;
+  final WordProvider wordProvider;
+  final HangmanDrawing hangmanDrawing;
 
   public GameViselitsa() {
     this.wordProvider = new WordProvider();
